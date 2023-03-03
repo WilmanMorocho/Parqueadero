@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  {% include "navbar.html" %}
+
+  <h1 style="color: white">Listar Propietario</h1>
+
+
+
+  <div class="tabla m-5">
+
+    <div class="row col-12 justify-content-end mb-2 pr-0">
+      <a class="btn btn-primary col-md-3"  href="http://127.0.0.1:8000/registro/propietario"> Agregar Nuevo Propietario</a>
+    </div>
+
+    <table class="table">
+      <thead class="bg-primary">
+        <tr>
+          <th scope="col" >Cedula</th>
+          <th scope="col" >Nombre</th>
+          <th scope="col" >Apellido</th>
+          <th scope="col" >Placa Auto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for propietario in propietarios %}
+        <tr class="bg-secondary p-2 text-white bg-opacity-50">
+          <th scope="row">{{ propietario.cedula}}</th>
+          <td> {{propietario.nombre}} </td>
+          <td> {{propietario.apellido}} </td>
+          <td> {{propietario.idAuto}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

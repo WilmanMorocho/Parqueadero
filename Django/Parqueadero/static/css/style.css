@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.btn{
+  margin-top: 10px;
+}
+
+
+body{
+  background: url("../images/fondo.jpg") no-repeat center center/cover;
+  height: 100vh;
+
+}
+
+.formulario{
+  width: 60%;
+  margin: 20px auto;
+
+
+}

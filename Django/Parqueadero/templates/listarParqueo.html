@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  {% include "navbar.html" %}
+
+
+  <div class="tabla m-5">
+
+    <table class="table">
+      <thead class="bg-primary">
+        <tr>
+          <th scope="col">Hora Ingreso</th>
+          <th scope="col">Hora Salida</th>
+          <th scope="col">Auto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Cedula</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for parqueo in parqueos %}
+        <tr class="bg-secondary p-2 text-white bg-opacity-50">
+          <th scope="row">{{ parqueo.horaIngreso}}</th>
+          <td> {{parqueo.horaSalida}} </td>
+          <td> {{parqueo.idAuto}} </td>
+          <td> {{parqueo.idPropietario.nombre}} </td>
+          <td> {{parqueo.idPropietario.apellido}} </td>
+          <td> {{parqueo.idPropietario.cedula}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
